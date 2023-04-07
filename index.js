@@ -34,4 +34,11 @@ const test = () => {
   }
 };
 
-test();
+//オブジェクト
+const unko2 = {
+  color: 'pink',
+  size: 'large',
+  perfume: 'mint',
+};
+
+console.log(unko2);
