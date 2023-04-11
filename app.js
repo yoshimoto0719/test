@@ -12,21 +12,14 @@ const correct = 'ニンテンドーDS';
 console.log(document.getElementById('js-question'));
 
 //定数の文字列をHTMLに反映させる
-document.getElementById('js-question').textContent = question;
-
-const $button = document.getElementsByTagName('button');
-
-
-//while文
-let buttonIndex = 0;
-//buttonの数
-let buttonLength = $button.length;
-while(buttonIndex < buttonLength){
-    //ここに命令
-    $button[buttonIndex].textContent = answers[buttonIndex];
-    buttonIndex++;
+const setupQuiz = () => {
+    while(buttonIndex < buttonLength){
+        //ここに命令
+        $button[buttonIndex].textContent = answers[buttonIndex];
+        buttonIndex++;
+    }
+    // 4になったら命令がストップする
 }
-// 4になったら命令がストップする
 
 
 // ボタンをクリックしたら正誤判定
