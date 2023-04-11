@@ -9,10 +9,15 @@ const answers = [
   ];
 const correct = 'ニンテンドーDS';
 
+const $button = document.getElementsByTagName('button');
+
 console.log(document.getElementById('js-question'));
 
-//定数の文字列をHTMLに反映させる
+//クイズの問題文選択肢を定義
 const setupQuiz = () => {
+    document.getElementById('js-question').textContent = question;
+    let buttonIndex = 0;
+    let buttonLength = $button.length;
     while(buttonIndex < buttonLength){
         //ここに命令
         $button[buttonIndex].textContent = answers[buttonIndex];
@@ -21,10 +26,14 @@ const setupQuiz = () => {
     // 4になったら命令がストップする
 }
 
+setupQuiz();
+
+
+
 
 // ボタンをクリックしたら正誤判定
-$button[0].addEventListener('click', () => {
-    if(correct === $button[0].textContent){
+$button[0].addEventListener('click', (e) => {
+    if(correct === e.target.textContent){
         window.alert('正解！');
     } else {
         window.alert('不正解！');
