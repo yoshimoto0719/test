@@ -10,6 +10,7 @@ const answers = [
 const correct = 'ニンテンドーDS';
 
 const $button = document.getElementsByTagName('button');
+const buttonLength = $button.length;
 
 console.log(document.getElementById('js-question'));
 
@@ -17,7 +18,6 @@ console.log(document.getElementById('js-question'));
 const setupQuiz = () => {
     document.getElementById('js-question').textContent = question;
     let buttonIndex = 0;
-    let buttonLength = $button.length;
     while(buttonIndex < buttonLength){
         //ここに命令
         $button[buttonIndex].textContent = answers[buttonIndex];
@@ -39,7 +39,6 @@ const clickHandler = (e) => {
 
 // ボタンをクリックしたら正誤判定
 let handlerIndex = 0;
-const buttonLength = $button.length;
 while (handlerIndex < buttonLength) {
     $button[handlerIndex].addEventListener('click', (e) => {
         clickHandler(e);
